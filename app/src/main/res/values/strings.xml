@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Contacts</string>
+
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="birthday">Birthday</string>
+
+    <string name="invalid_name">Invalid Name</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="invalid_birthday">Invalid Birthday</string>
+    <string name="invalid_phone">Invalid Phone</string>
+    <string name="invalid_address">Invalid Address</string>
+    <string name="person">Person</string>
+    <string name="are_you_sure">Are you sure to delete this?</string>
+    <string name="no_contacts">You have no contacts, add some.</string>
+</resources>
