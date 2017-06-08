@@ -1,5 +1,7 @@
 # Android CRUD MVP Demo
 
+Use tap and long tap for edit or delete a person.
+
 This project uses:
 
 * Room Persistence Library
