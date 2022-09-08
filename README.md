@@ -2,10 +2,8 @@
 
 Use tap and long tap for edit or delete a person.
 
-This project uses:
-
 * Room Persistence Library
-* Model View Presenter Architecture
+* MVP (Model View Presenter) Architecture
 * UI & unit tests
 
 ## Screenshots
@@ -17,6 +15,3 @@ This project uses:
 <img width="300" alt="1" src="https://user-images.githubusercontent.com/1444991/26915730-34e743e4-4bf5-11e7-97e7-8b5799a6c8c9.png">
 
 ---
-
-* [Website](https://alvarez.tech/)
-* [YouTube channel](https://www.youtube.com/alvareztech)
