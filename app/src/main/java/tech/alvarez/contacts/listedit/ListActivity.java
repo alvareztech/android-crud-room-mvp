@@ -2,12 +2,14 @@ package tech.alvarez.contacts.listedit;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -29,17 +31,12 @@ public class ListActivity extends AppCompatActivity implements ListContract.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPresenter.addNewPerson();
-            }
-        });
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(v -> mPresenter.addNewPerson());
 
-        mEmptyTextView = (TextView) findViewById(R.id.emptyTextView);
+        mEmptyTextView = findViewById(R.id.emptyTextView);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
+        RecyclerView recyclerView = findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mPeopleAdapter = new PeopleAdapter(this);

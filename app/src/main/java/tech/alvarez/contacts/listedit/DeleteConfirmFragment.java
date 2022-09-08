@@ -2,11 +2,11 @@ package tech.alvarez.contacts.listedit;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
 
 import tech.alvarez.contacts.R;
 import tech.alvarez.contacts.utils.Constants;
@@ -22,19 +22,8 @@ public class DeleteConfirmFragment extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.are_you_sure);
 
-        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                mListener.setConfirm(true, personId);
-            }
-        });
-
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                mListener.setConfirm(false, personId);
-            }
-        });
+        builder.setPositiveButton(android.R.string.ok, (dialogInterface, i) -> mListener.setConfirm(true, personId));
+        builder.setNegativeButton(android.R.string.cancel, (dialogInterface, i) -> mListener.setConfirm(false, personId));
         return builder.create();
     }
 

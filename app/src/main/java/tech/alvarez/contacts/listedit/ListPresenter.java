@@ -1,10 +1,5 @@
 package tech.alvarez.contacts.listedit;
 
-import android.arch.lifecycle.Observer;
-import android.support.annotation.Nullable;
-
-import java.util.List;
-
 import tech.alvarez.contacts.data.db.dao.PersonDao;
 import tech.alvarez.contacts.data.db.entity.Person;
 
@@ -36,13 +31,10 @@ public class ListPresenter implements ListContract.Presenter {
 
     @Override
     public void populatePeople() {
-        personDao.findAllPersons().observeForever(new Observer<List<Person>>() {
-            @Override
-            public void onChanged(@Nullable List<Person> persons) {
-                mView.setPersons(persons);
-                if (persons == null || persons.size() < 1) {
-                    mView.showEmptyMessage();
-                }
+        personDao.findAllPersons().observeForever(persons -> {
+            mView.setPersons(persons);
+            if (persons == null || persons.size() < 1) {
+                mView.showEmptyMessage();
             }
         });
     }

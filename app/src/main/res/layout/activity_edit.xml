@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_margin="16dp"
             android:orientation="vertical">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/nameTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -29,9 +29,9 @@
                     android:hint="@string/name"
                     android:inputType="textCapWords|textPersonName|textNoSuggestions" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/addressTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -45,9 +45,9 @@
                     android:lines="2"
                     android:minLines="2" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/phoneTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -59,9 +59,9 @@
                     android:hint="@string/phone"
                     android:inputType="phone|textNoSuggestions" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -73,9 +73,9 @@
                     android:hint="@string/email"
                     android:inputType="textEmailAddress|textNoSuggestions" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/birthdayTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -88,13 +88,13 @@
                     android:hint="@string/birthday"
                     android:inputType="none" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
     </ScrollView>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,4 +105,4 @@
         app:layout_anchorGravity="bottom|right|end" />
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

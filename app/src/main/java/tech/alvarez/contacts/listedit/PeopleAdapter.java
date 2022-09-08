@@ -1,6 +1,6 @@
 package tech.alvarez.contacts.listedit;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,19 +39,11 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
         holder.emailTextView.setText(holder.mItem.email);
         holder.birthdayTextView.setText(Util.formatMin(holder.mItem.birthday));
 
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mOnItemClickListener.clickItem(holder.mItem);
-            }
-        });
+        holder.mView.setOnClickListener(v -> mOnItemClickListener.clickItem(holder.mItem));
 
-        holder.mView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                mOnItemClickListener.clickLongItem(holder.mItem);
-                return false;
-            }
+        holder.mView.setOnLongClickListener(v -> {
+            mOnItemClickListener.clickLongItem(holder.mItem);
+            return false;
         });
     }
 
@@ -77,11 +69,11 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            nameTextView = (TextView) view.findViewById(R.id.nameTextView);
-            phoneTextView = (TextView) view.findViewById(R.id.phoneTextView);
-            emailTextView = (TextView) view.findViewById(R.id.emailTextView);
-            birthdayTextView = (TextView) view.findViewById(R.id.birthdayTextView);
-            addressTextView = (TextView) view.findViewById(R.id.addressTextView);
+            nameTextView = view.findViewById(R.id.nameTextView);
+            phoneTextView = view.findViewById(R.id.phoneTextView);
+            emailTextView = view.findViewById(R.id.emailTextView);
+            birthdayTextView = view.findViewById(R.id.birthdayTextView);
+            addressTextView = view.findViewById(R.id.addressTextView);
         }
     }
 

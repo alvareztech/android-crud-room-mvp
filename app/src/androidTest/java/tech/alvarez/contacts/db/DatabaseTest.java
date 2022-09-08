@@ -1,9 +1,13 @@
 package tech.alvarez.contacts.db;
 
-import android.arch.persistence.room.Room;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertThat;
+
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+
+import androidx.room.Room;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import org.junit.After;
 import org.junit.Before;
@@ -19,9 +23,6 @@ import tech.alvarez.contacts.data.db.AppDatabase;
 import tech.alvarez.contacts.data.db.dao.PersonDao;
 import tech.alvarez.contacts.data.db.entity.Person;
 
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
-
 @RunWith(AndroidJUnit4.class)
 public class DatabaseTest {
 
@@ -30,7 +31,7 @@ public class DatabaseTest {
 
     @Before
     public void createDb() {
-        Context context = InstrumentationRegistry.getTargetContext();
+        Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
         mDb = Room.inMemoryDatabaseBuilder(context, AppDatabase.class).build();
         mPersonDao = mDb.personModel();
     }
